@@ -1,5 +1,5 @@
 variable "cluster_name" {
-  default = "app-signals-demo"
+  default = "petclinic-demo"
 }
 
 variable "cloudwatch_observability_addon_version" {
