@@ -216,4 +216,16 @@ resource "aws_kinesis_stream" "apm_test_stream" {
 resource "aws_sqs_queue" "apm_test_queue" {
   #checkov:skip=CKV_AWS_27:demo only, not encryption is needed
   name                      = "apm_test"
+  
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Principal = "*"
+        Action = "sqs:*"
+        Resource = "*"
+      }
+    ]
+  })
 }
