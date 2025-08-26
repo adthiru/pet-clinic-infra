@@ -1,11 +1,5 @@
 # S3 bucket for pet clinic application data storage
 resource "aws_s3_bucket" "pet_clinic_data" {
-  #checkov:skip=CKV_AWS_144:demo only, versioning not required
-  #checkov:skip=CKV_AWS_18:demo only, access logging not required
-  #checkov:skip=CKV_AWS_21:demo only, versioning not required
-  #checkov:skip=CKV2_AWS_62:demo only, event notifications not required
-  #checkov:skip=CKV_AWS_145:demo only, encryption will be handled by application
-  
   bucket = "pet-clinic-data-${random_string.bucket_suffix.result}"
   
   tags = {
